@@ -9,5 +9,6 @@ public class Company {
         // đối tương annoymous - vo danh - khong co ten doi tuong
         new Employess().getName();
         new Employess().getAdress();
+
     }
 }
