@@ -1,5 +1,6 @@
 package Selenium.TestNG;
 
+import Selenium.Bai5_Locator.BT_LocatorCRM;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,7 +27,21 @@ public class Demo3ActionCheck {
         else {
             System.out.println("False");
         }
+        driver.get(BT_LocatorCRM.URL_Page);
+        WebElement checkboxRemember = driver.findElement(By.xpath(BT_LocatorCRM.Checkbox_Remember));
+        if (checkboxRemember.isSelected()==false){
+            System.out.println("True");
+        }else {
+            System.out.println("False");
+        }
+        driver.findElement(By.xpath(BT_LocatorCRM.Checkbox_Remember)).click();
+        if (checkboxRemember.isSelected()==false){
+            System.out.println("True");
+        }else {
+            System.out.println("False");
+        }
         Thread.sleep(2000);
+
         driver.quit();
     }
 }

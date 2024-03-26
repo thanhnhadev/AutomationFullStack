@@ -2,13 +2,14 @@ package Selenium.Bai5_Locator;
 
 public class BT_LocatorCRM {
     //URL location
-    public static String URL_Page = "https://cms.anhtester.com/login";
+    public static String URL_Page = "https://crm.anhtester.com/admin/authentication";
 
     //Login Page
     public static String headerLoginPage ="//h1[contains(.,'Login')]";
     public static String txtEmail="//input[@id='email']";
     public static String txtPassword = "//input[@id='password']";
     public static String btnLogin = "//button[contains(.,'Login')]";
+    public static String Checkbox_Remember="//input[@id='remember']";
     public  static String linkForGotPassword = "//a[contains(.,'Forgot Password?')]";
 
     //Account
