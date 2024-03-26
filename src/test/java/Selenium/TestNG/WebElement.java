@@ -1,29 +1,26 @@
-package Selenium.Bai5_Locator;
+package Selenium.TestNG;
 
+import Selenium.Bai5_Locator.BT_LocatorCRM;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class LoginCMS {
+public class WebElement {
     public static void main(String[] args) throws InterruptedException {
         //khoi tao browser
-        //chrome,firefox,edge
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver;
+        driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        // open webs
         driver.get(BT_LocatorCRM.URL_Page);
-        //admin@example.com
-
-        //định vi cac elements trang login cms
-        driver.findElement(By.id("email")).sendKeys("admin@example.com");
-        driver.findElement(By.id("password")).sendKeys("123456");
-        driver.findElement(By.tagName("button")).click();
-        Thread.sleep(3000);
+        //senkey, click, clear
+        driver.findElement(By.xpath(BT_LocatorCRM.txtEmail)).sendKeys(BT_LocatorCRM.EmailAdress);
+        driver.findElement(By.xpath(BT_LocatorCRM.txtPassword)).sendKeys(BT_LocatorCRM.Password);
+        driver.findElement(By.xpath(BT_LocatorCRM.btnLogin)).click();
 //        driver.findElement(By.id("logout")).click();
+        Thread.sleep(2000);
         driver.quit();
     }
 }
