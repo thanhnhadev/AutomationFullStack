@@ -8,9 +8,9 @@ public class HandleCheckbox extends BaseTest {
         createMultiBrowser("chrome");
         driver.get("https://demoqa.com/checkbox");
         sleep(1);
-        driver.findElement(By.xpath("//input[@type='checkbox']")).click();
+       boolean checkbox= driver.findElement(By.xpath("//input[@type='checkbox']")).isSelected();
         sleep(1);
-
+        System.out.println(checkbox);
         closeBrowser();
     }
 }
