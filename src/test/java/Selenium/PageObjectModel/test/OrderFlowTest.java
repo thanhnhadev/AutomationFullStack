@@ -1,6 +1,7 @@
 package Selenium.PageObjectModel.test;
 
 import Selenium.PageObjectModel.Page.HomePage;
+import Selenium.PageObjectModel.Page.ProductDetailPage;
 import Selenium.PageObjectModel.base.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -24,13 +25,15 @@ public class OrderFlowTest extends TestBase {
         homePage.selectProductByName("Sauce Labs Onesie");
 
         // click on Add To cart button
-        _driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
+
+        ProductDetailPage productDetailPage = new ProductDetailPage(this._driver);
+        productDetailPage.addProductTocart();
+        productDetailPage.header().navigateToCartPage();
 
         // navigate to cart
-        _driver.findElement(By.id("shopping_cart_container")).click();
-
         List<WebElement> cartItem = _driver.findElements(By.className("cart_item"));
         Assert.assertTrue(cartItem.size() > 0);
+
     }
 
     @Test
@@ -41,7 +44,8 @@ public class OrderFlowTest extends TestBase {
 
 
     @AfterClass
-    public void oneTimeTearDown(){
-        System.out.println("Tui la one time tear down do nhen");
+    public void oneTimeTearDown() throws Exception {
+        Thread.sleep(2000);
+        _driver.quit();
     }
 }
