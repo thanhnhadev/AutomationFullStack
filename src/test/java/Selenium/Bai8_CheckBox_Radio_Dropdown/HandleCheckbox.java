@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 public class HandleCheckbox extends BaseTest {
     public static void main(String[] args) {
         createMultiBrowser("chrome");
-        driver.get("https://demoqa.com/checkbox");
+        driver.get("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
         sleep(1);
        boolean checkbox= driver.findElement(By.xpath("//input[@type='checkbox']")).isSelected();
         sleep(1);

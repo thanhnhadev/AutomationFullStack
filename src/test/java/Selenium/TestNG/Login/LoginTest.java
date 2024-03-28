@@ -4,6 +4,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoginTest {
-    @BeforeMethod
+    @Test
+    public void test1() {
+
+    }
+    @Test
+    public void test2() {
+
+    }
+
 
 }
