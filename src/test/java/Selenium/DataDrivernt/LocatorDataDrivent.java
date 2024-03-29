@@ -1,4 +1,4 @@
 package Selenium.DataDrivernt;
 
-public class datadrivent {
+public class LocatorDataDrivent {
 }
