@@ -10,6 +10,6 @@ public class HomePage extends BasePage {
     }
     public void  selectProductByName(String productName) {
         String productXpath = String.format("//*[text()='%s']",productName);
-        this.driver.findElement(By.xpath(productXpath));
+        this.driver.findElement(By.xpath(productXpath)).click();
     }
 }

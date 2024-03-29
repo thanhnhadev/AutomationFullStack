@@ -1,5 +1,6 @@
 package Selenium.PageObjectModel.test;
 
+import Selenium.PageObjectModel.Page.CardPage;
 import Selenium.PageObjectModel.Page.HomePage;
 import Selenium.PageObjectModel.Page.ProductDetailPage;
 import Selenium.PageObjectModel.base.TestBase;
@@ -23,16 +24,17 @@ public class OrderFlowTest extends TestBase {
         // select first product
         HomePage homePage = new HomePage(this._driver);
         homePage.selectProductByName("Sauce Labs Onesie");
-
+        Thread.sleep(2000);
         // click on Add To cart button
 
         ProductDetailPage productDetailPage = new ProductDetailPage(this._driver);
         productDetailPage.addProductTocart();
         productDetailPage.header().navigateToCartPage();
-
+        Thread.sleep(2000);
         // navigate to cart
-        List<WebElement> cartItem = _driver.findElements(By.className("cart_item"));
-        Assert.assertTrue(cartItem.size() > 0);
+        CardPage cardPage = new CardPage(this._driver);
+        Assert.assertTrue(!cardPage.isCartItemEmpty() );
+        Thread.sleep(2000);
 
     }
 

@@ -11,10 +11,10 @@ public class ProductDetailPage extends BasePage {
         super(driver);
     }
     public void addProductTocart(){
-
+        this.navigateToCart();
     }
     public void navigateToCart(){
-        this.driver.findElement(By.id(LocatorPOM.addProductTocartID)).click();
+        this.driver.findElement(By.id(LocatorPOM.addProductTocartid)).click();
     }
 
 }
