@@ -10,8 +10,8 @@ import java.util.Objects;
 public class DemoDataDrivent {
 
     @Test(dataProvider="testSumFromOtherClass",dataProviderClass = SumData.class)
-    public void testSum(int soHang1,int soHang2,int result) {
-        Assert.assertTrue(soHang1+soHang2==result);
+    public void testSum(String soHang1,String soHang2,String result) {
+        Assert.assertTrue( Integer.parseInt(soHang1)+Integer.parseInt(soHang2)==Integer.parseInt(result));
     }
 //    @Test
 //    public void testSum2() {
