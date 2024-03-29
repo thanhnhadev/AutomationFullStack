@@ -1,5 +1,6 @@
 package Selenium.PageObjectModel.test;
 
+import Selenium.PageObjectModel.LocatorPOM;
 import Selenium.PageObjectModel.Page.CardPage;
 import Selenium.PageObjectModel.Page.HomePage;
 import Selenium.PageObjectModel.Page.ProductDetailPage;
@@ -23,7 +24,7 @@ public class OrderFlowTest extends TestBase {
     public void verifyAddProductToCartSuccessfully() throws Exception {
         // select first product
         HomePage homePage = new HomePage(this._driver);
-        homePage.selectProductByName("Sauce Labs Onesie");
+        homePage.selectProductByName(LocatorPOM.productName);
         Thread.sleep(2000);
         // click on Add To cart button
 
@@ -39,8 +40,17 @@ public class OrderFlowTest extends TestBase {
     }
 
     @Test
-    public void verifyRemoveItemInCart(){
-        Assert.assertTrue(_driver.findElement(By.className("app_logo")).getText().equals("Swag Labs"));
+    public void verifyRemoveItemInCart() throws Exception {
+        HomePage homePage = new HomePage(this._driver);
+        homePage.selectProductByName(LocatorPOM.productName1);
+        Thread.sleep(2000);
+        ProductDetailPage productDetailPage = new ProductDetailPage(this._driver);
+        productDetailPage.addProductTocart();
+        productDetailPage.header().navigateToCartPage();
+        Thread.sleep(2000);
+        CardPage cardPage = new CardPage(this._driver);
+        cardPage.RemoveCartItem(LocatorPOM.productName1);
+//        Assert.assertTrue(_driver.findElement(By.className("app_logo")).getText().equals("Swag Labs"));
     }
 
 
