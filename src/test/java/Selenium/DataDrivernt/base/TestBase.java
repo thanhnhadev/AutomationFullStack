@@ -1,7 +1,8 @@
 package Selenium.DataDrivernt.base;
 
-import Selenium.PageObjectModel.LocatorPOM;
-import Selenium.PageObjectModel.Page.LoginBase;
+
+import Selenium.DataDrivernt.LocatorDataDrivent;
+import Selenium.DataDrivernt.Page.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -16,8 +17,8 @@ public class TestBase {
         _driver = new ChromeDriver();
         _driver.manage().window().maximize();
         _driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        _driver.get(LocatorPOM.URL_Page);
-        LoginBase loginBase = new LoginBase(_driver);
+        _driver.get(LocatorDataDrivent.URL_Page);
+        LoginPage loginBase = new LoginPage(_driver);
         loginBase.loginToSystem("standard_user", "secret_sauce");
     }
 
