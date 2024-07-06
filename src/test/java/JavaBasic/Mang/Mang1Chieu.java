@@ -4,7 +4,6 @@ public class Mang1Chieu {
     public static void main(String[] args) {
 //        khai bao mang
         int songuyen[]=new int[20];
-
 //        them gia tri vao mang
         songuyen[0]=5;
         songuyen[2]=10;
@@ -24,7 +23,6 @@ public class Mang1Chieu {
         //them gia tri vao mang thong qua vong lap for
         for (int i = 0; i < songuyen.length; i++) {
             if (i%2==0){
-
                 songuyen[i]=10;
             }
         }

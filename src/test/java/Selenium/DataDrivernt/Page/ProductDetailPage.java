@@ -2,6 +2,7 @@ package Selenium.DataDrivernt.Page;
 
 import Selenium.DataDrivernt.LocatorDataDrivent;
 
+import Selenium.DataDrivernt.Page.components.Header;
 import Selenium.DataDrivernt.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,4 +15,6 @@ public class ProductDetailPage extends BasePage {
         this.driver.findElement(By.xpath(LocatorDataDrivent.btnAddToCart)).click();
         return this;
     }
+
+
 }

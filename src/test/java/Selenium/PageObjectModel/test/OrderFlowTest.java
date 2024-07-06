@@ -26,8 +26,8 @@ public class OrderFlowTest extends TestBase {
         HomePage homePage = new HomePage(this._driver);
         homePage.selectProductByName(LocatorPOM.productName);
         Thread.sleep(2000);
-        // click on Add To cart button
 
+        // click on Add To cart button
         ProductDetailPage productDetailPage = new ProductDetailPage(this._driver);
         productDetailPage.addProductTocart();
         productDetailPage.header().navigateToCartPage();
